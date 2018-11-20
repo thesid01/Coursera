@@ -1,21 +1,39 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Feedback, ContactType } from '../shared/feedback';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild,Inject } from '@angular/core';
+import { flyInOut,expand } from '../animations/app.animation';
+import { FeedbackService } from '../services/feedback.service';
+import { ProcessHTTPMsgService } from '../services/process-httpmsg.service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
+  host: {
+  '[@flyInOut]': 'true',
+  'style': 'display: block;'
+  },
+  animations: [
+    flyInOut(),
+     expand()
+  ]
 })
 export class ContactComponent implements OnInit {
 
   @ViewChild('fform') feedbackFormDirective;
-
+  visibility = 'shown';
+  errMess: string;
+  showForm = true;
+  showSpinner = false;
+  showInfo = false;
   feedbackForm: FormGroup;
+  feedbacks: Feedback[];
   feedback: Feedback;
   contactType = ContactType;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,
+  private feedbackService: FeedbackService,
+@Inject('BaseURL')private baseURL) {
     this.createForm();
   }
 
@@ -91,6 +109,8 @@ export class ContactComponent implements OnInit {
   onSubmit() {
     this.feedback = this.feedbackForm.value;
     console.log(this.feedback);
+    this.showForm = false;
+    this.showSpinner = true;
     this.feedbackForm.reset({
       firstname: '',
       lastname: '',
@@ -101,6 +121,14 @@ export class ContactComponent implements OnInit {
       message: ''
     });
     this.feedbackFormDirective.resetForm();
+
+    this.feedbackService.submitFeedback(this.feedback)
+      .subscribe(feedback => {
+        this.feedback = feedback;
+        this.showSpinner = false;
+        this.showInfo = true;
+        setTimeout(() => {this.showInfo = false; this.showForm = true; this.showSpinner = false; }, 5000); },
+      errmess => { this.feedback = null; this.errMess = <any>errmess; });
   }
 
 
