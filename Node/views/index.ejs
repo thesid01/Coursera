@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Login</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/css/mdb.min.css" rel="stylesheet">
+
+  <!-- JQuery -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.0/js/mdb.min.js"></script>
+</head>
+<body style="height:100%;" >
+
+  <div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-sm-10 col-md-5 mx-auto">
+
+          <!-- Default form login -->
+          <form class="text-center border border-light p-5">
+
+              <p class="h4 mb-4">Sign in</p>
+
+              <!-- Email -->
+              <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+              <!-- Password -->
+              <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password">
+
+              <div class="d-flex justify-content-around">
+                  <div>
+                      <!-- Remember me -->
+                      <div class="custom-control custom-checkbox">
+                          <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                          <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                      </div>
+                  </div>
+                  <div>
+                      <!-- Forgot password -->
+                      <a href="">Forgot password?</a>
+                  </div>
+              </div>
+
+              <!-- Sign in button -->
+              <button class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+
+              <!-- Register -->
+              <p>Not a member?
+                  <a href="">Register</a>
+              </p>
+
+              <!-- Social login -->
+              <p>or sign in with:</p>
+
+              <a type="button" class="light-blue-text mx-2">
+                  <i class="fab fa-facebook-f"></i>
+              </a>
+              <a type="button" class="light-blue-text mx-2">
+                  <i class="fab fa-twitter"></i>
+              </a>
+              <a type="button" class="light-blue-text mx-2">
+                  <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a type="button" class="light-blue-text mx-2">
+                  <i class="fab fa-github"></i>
+              </a>
+
+          </form>
+          <!-- Default form login -->
+
+        </div>
+
+        <div class="col-sm-10 col-md-5 mx-auto">
+
+          <!-- Default form register -->
+          <form class="text-center border border-light p-5" method="post" action="/register">
+
+              <p class="h4 mb-4">Sign up</p>
+
+              <div class="form-row mb-4">
+                  <div class="col">
+                      <!-- First name -->
+                      <input type="text" id="firstname" name="firstname" class="form-control" placeholder="First name">
+                  </div>
+                  <div class="col">
+                      <!-- Last name -->
+                      <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last name">
+                  </div>
+              </div>
+
+              <!-- E-mail -->
+              <input type="email" id="email" name="email" class="form-control mb-4" placeholder="E-mail">
+
+              <!-- Password -->
+              <input type="password" id="password" name="password" class="form-control" placeholder="Password" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+              <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                  At least 8 characters and 1 digit
+              </small>
+
+              <!-- Phone number -->
+              <input type="text" id="contact" name="contact" class="form-control" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+              <small id="defaultRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+                  Optional - for two step authentication
+              </small>
+
+              <!-- Newsletter -->
+              <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="rememberme">
+                  <label class="custom-control-label" for="defaultRegisterFormNewsletter">Subscribe to our newsletter</label>
+              </div>
+
+              <!-- Sign up button -->
+              <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+
+              <!-- Social register -->
+              <p>or sign up with:</p>
+
+              <a type="button" class="light-blue-text mx-2">
+                  <i class="fab fa-facebook-f"></i>
+              </a>
+              <a type="button" class="light-blue-text mx-2">
+                  <i class="fab fa-twitter"></i>
+              </a>
+              <a type="button" class="light-blue-text mx-2">
+                  <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a type="button" class="light-blue-text mx-2">
+                  <i class="fab fa-github"></i>
+              </a>
+
+              <hr>
+
+              <!-- Terms of service -->
+              <p>By clicking
+                  <em>Sign up</em> you agree to our
+                  <a href="" target="_blank">terms of service</a>
+
+          </form>
+          <!-- Default form register -->
+
+        </div>
+    </div>
+  </div>
+
+</body>
+</html>
